@@ -3,7 +3,7 @@
 This is solution set of problems on [leetcode](https://leetcode.com/) which
 contains python and cpp version.
 
-This project will try to supply as many way to solv one problem.
+This project will try to supply as many way to solve one problem.
 
 
 ## Contact
