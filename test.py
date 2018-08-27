@@ -1,13 +1,12 @@
 class Solution:
-    def findRelativeRanks(self, nums):
+    def missingNumber(self, nums):
         """
         :type nums: List[int]
-        :rtype: List[str]
+        :rtype: int
         """
-        top = ["Gold Medal", "Silver Medal", "Bronze Medal"]
-        left = [str(index + 1) for index, item in enumerate(nums)][:3]
-        return top + left
+        return sum(range(len(nums) + 1)) - sum(nums)
          
                                     
 if __name__ == "__main__":
-    print(Solution().findRelativeRanks(points))
+    nums = [9,6,4,2,3,5,7,0,1]
+    print(Solution().missingNumber(nums))
