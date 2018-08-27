@@ -25,9 +25,9 @@ class Solution:
         time: O(n^2)
         """
         for i, x in enumerate(nums):
-            for j, y in enumerate(nums[i:]):
-                if x + y == target and i != j:
-                    return [i, j]
+            for j, y in enumerate(nums[(i + 1):]):
+                if x + y == target:
+                    return [i, j + i + 1]
         return []
 
     def twoSum2(self, nums, target):
@@ -45,7 +45,11 @@ class Solution:
             cache[num] = i
         for i, num in enumerate(nums):
             if target - num in cache:
-                return [i, cache[target - num]] if i < cache[target - num] else [cache[target - num], i]
+                if i < cache[target - num]:
+                    return [i, cache[target - num]]
+                elif i > cache[target - num]:
+                    return [cache[target - num], i]
+        return []
 
     def twoSum3(self, nums, target):
         """
@@ -78,6 +82,7 @@ class Solution:
             tmp_nums = nums[k:]
             if j in tmp_nums:
                 return [k - 1, tmp_nums.index(j) + k]
+        return []
 
 
 if __name__ == '__main__':
