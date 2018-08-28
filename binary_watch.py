@@ -50,8 +50,22 @@ class Solution:
                 if 0<= m <= 59:
                     minutes.append(m)
             res += [str(h) + ":0" + str(m) if m < 10 else str(h) + ":" + str(m) for h in hour for m in minutes]
+
         return res            
 
+    def readBinaryWatch2(self, num):
+        """
+        :type num: int
+        :rtype: List[str]
+        """
+        return ['%d:%02d' % (h, m)
+                for h in range(12) for m in range(60)
+                if (bin(h) + bin(m)).count('1') == num]
+
 if __name__ == "__main__":
+    # test my solution
     print(Solution().readBinaryWatch(1))
     print(Solution().readBinaryWatch(2))
+    # test stefanpochmann's solution
+    print(Solution().readBinaryWatch2(1))
+    print(Solution().readBinaryWatch2(2))
