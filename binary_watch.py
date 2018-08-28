@@ -40,16 +40,17 @@ class Solution:
                 h = 0
                 for k in j:
                     h += int(math.pow(2, k))
-                hour.append(h)
+                if 0<= h <= 11:
+                    hour.append(h)
             minutes_com = list(itertools.combinations(range(6), num - i))
             for j in minutes_com:
                 m = 0
                 for k in j:
                     m += int(math.pow(2, k))
-                minutes.append(m)
+                if 0<= m <= 59:
+                    minutes.append(m)
             res += [str(h) + ":0" + str(m) if m < 10 else str(h) + ":" + str(m) for h in hour for m in minutes]
-        return res
-            
+        return res            
 
 if __name__ == "__main__":
     print(Solution().readBinaryWatch(1))
