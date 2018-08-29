@@ -1,10 +1,11 @@
 ## What is this
 
 This is solution set of problems on [leetcode](https://leetcode.com/) which
-contains python and cpp version.
+contains python version solution so far.
 
-This project will try to supply as many way to solve one problem.
-
+I will try to find the best solution of each problem and give explanation.
+For each type of problem, I will write a conclution induction for others to
+really understand how to solve problems rather than only remembering the code.
 
 ## Contact
 
