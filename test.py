@@ -1,12 +1,31 @@
 class Solution:
-    def missingNumber(self, nums):
+    def nextGreatestLetter(self, letters, target):
         """
-        :type nums: List[int]
-        :rtype: int
+        :type letters: List[str]
+        :type target: str
+        :rtype: str
         """
-        return sum(range(len(nums) + 1)) - sum(nums)
+        if letters[-1] <= target:
+            for i in letters:
+                if i < target:
+                    return i
+        else:
+            for i in letters:
+                if i > target:
+                    return i
          
-                                    
+            
 if __name__ == "__main__":
-    nums = [9,6,4,2,3,5,7,0,1]
-    print(Solution().missingNumber(nums))
+    letters = ["c", "f", 'j']
+    target1 = "a"
+    target2 = "c"
+    target3 = "d"
+    target4 = "g"
+    target5 = "j"
+    target6 = "k"
+    print(Solution().nextGreatestLetter(letters, target1))
+    print(Solution().nextGreatestLetter(letters, target2))
+    print(Solution().nextGreatestLetter(letters, target3))
+    print(Solution().nextGreatestLetter(letters, target4))
+    print(Solution().nextGreatestLetter(letters, target5))
+    print(Solution().nextGreatestLetter(letters, target6))
