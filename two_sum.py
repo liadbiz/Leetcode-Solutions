@@ -11,8 +11,6 @@
 # Because nums[0] + nums[1] = 2 + 7 = 9,
 # return [0, 1].
 #
-
-
 class Solution:
     def twoSum1(self, nums, target):
         """
@@ -73,7 +71,7 @@ class Solution:
         :type nums: List[int]
         :type target: int
         :rtype: List[int]
-        same as twoSum1 
+        same as twoSum1
         """
         k = 0
         for i in nums:

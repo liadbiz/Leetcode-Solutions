@@ -1,3 +1,4 @@
+# /usr/bin/env python3
 """
 Given an integer, return its base 7 string representation.
 
@@ -9,5 +10,8 @@ Input: -7
 Output: "-10"
 Note: The input will be in range of [-1e7, 1e7].
 """
+if __name__ == "__main__":
+    
+    print("niwnegi")
 
 
