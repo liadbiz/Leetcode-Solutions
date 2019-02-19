@@ -46,3 +46,21 @@ class Solution:
                 index += 1
         return -1
 
+
+    def strStr3(self, haystack, needle):
+        for i in range(len(haystack)):
+            if haystack[i:i+len(needle)] == needle:
+                return i
+        return -1
+    
+
+if __name__ == "__main__":
+    haystack = "hello"
+    needle = "ll"
+    haystack2 = "aaaaa"
+    needle2 = "bba"
+    haystack3 = "aaaaa"
+    needle3 = ""
+    print(Solution().strStr3(haystack, needle))
+    print(Solution().strStr3(haystack2, needle2))
+    print(Solution().strStr3(haystack3, needle3))
