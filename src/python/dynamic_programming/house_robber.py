@@ -23,7 +23,6 @@ class Solution:
     def rob(self, nums):
         result = [0, nums[0]]
         for i in range(1, len(nums)):
-            print(result, i)
             result.append(max(result[i-1] + nums[i], result[i]))
         return result[-1]                       
        
