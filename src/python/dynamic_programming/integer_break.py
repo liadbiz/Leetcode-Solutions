@@ -15,5 +15,15 @@ Output: 36
 Explanation: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36.
 Note: You may assume that n is not less than 2 and not larger than 58.
 """
+class Solution:
+    def integerBreak(self, n: int) -> int:
+        if n ==  2 or n == 3:
+            return n - 1
+        dp = [1, 2, 3, 4]
+        for i in range(5, n + 1):
+            dp.append(3 * dp[i - 4]);
+        return dp[-1]
+
 if __name__ == "__main__":
-  
+    n = 10;
+    print(Solution().integerBreak(n))
