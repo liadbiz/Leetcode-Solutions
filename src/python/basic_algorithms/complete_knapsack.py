@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def zeroOneKnapsack(C, W, V):
-    """0-1 knapsack problem solution
+def completeKnapsack(C, W, V):
+    """complete knapsack problem solution
 
     solve the 0-1 knapsack problem: given of N goods with weight and value for 
     each good that are stored in W and V, select goods and put them into a 
     knapsack with capacity C, find the maximum total value you can get.
+
+    diffrence with 0-1 knapsack problem: each good can be selected by any times
 
     Args:
         C: capacity of knapsack
@@ -21,7 +23,7 @@ def zeroOneKnapsack(C, W, V):
     N = len(W)
     dp = [0 for _ in range(C+1)]
     for i in range(N):
-        for c in range(C, W[i] - 1, -1):
+        for c in range(W[i], C + 1):
             dp[c] = max(dp[c], dp[c - W[i]] + V[i])
     return dp[-1]
 
@@ -30,4 +32,4 @@ if __name__ == "__main__":
     C = 15
     W = [3,2,6,7,1,4,9,5]
     V = [6,3,5,8,3,1,6,9]
-    print(zeroOneKnapsack(C, W, V))
+    print(completeKnapsack(C, W, V))
