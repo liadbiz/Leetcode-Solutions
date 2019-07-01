@@ -26,6 +26,7 @@ Output: 0.73278
 
 """
 class Solution:
+    # comlexity: O(n^2), this method is time excceded
     def new21Game(self, N: int, K: int, W: int) -> float:
         dp = [1] + [0 for _ in range(N)]
         for i in range(1, N+1):
@@ -33,6 +34,20 @@ class Solution:
             right = min(K-1, i-1)
             for j in range(left, right+1):
                 dp[i] += dp[j] / W
+        return sum(dp[K:])
+
+    # comlexity: O(n) 
+    def new21Game2(self, N: int, K: int, W: int) -> float:
+        if K == 0:
+            return 1
+        dp = [1] + [0 for _ in range(N)]
+        s = 1.0
+        for i in range(1, N+1):
+            dp[i] = s / W
+            if i < K:
+                s += dp[i]
+            if W <= i < K + W:
+                s -= dp[i-W]
         return sum(dp[K:])
 
 
